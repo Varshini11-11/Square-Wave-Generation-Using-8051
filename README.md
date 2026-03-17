@@ -1,12 +1,10 @@
 # Square-Wave-Generation-Using-8051
-
 ## Aim:
 To generate a square wave using the 8051 microcontroller and observe the waveform using Keil software and Proteus simulation.
 
 ## Apparatus Required:
 •	Laptop with Keil uVision software
 •	Proteus Design Suite
-
 ## Circuit Diagram Setup in Proteus:
 1.	Open Proteus and create a new project.
 2.	Add the following components from the library:
@@ -17,8 +15,6 @@ o	Resistor (1kΩ) (if using hardware)
 4.	Save the design and proceed to programming in Keil.
  
 <img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/0193f568-7d70-4310-9a37-989204f63d46" />
-
-
 ## Algorithm:
 1.	Configure P1.0 as an output port.
 2.	Set P1.0 HIGH to generate a HIGH pulse.
@@ -32,11 +28,8 @@ o	Resistor (1kΩ) (if using hardware)
 2.	Connect P1.0 to an oscilloscope.
 3.	Run the simulation and observe the square wave on the oscilloscope.
 4.	Adjust delay loops if needed to modify the wave frequency.
-
-
 ## Program:
-```
-#include<reg51.h>
+```#include<reg51.h>
  sbit wave=P1^0;
  void delay();
  void main()
@@ -63,12 +56,8 @@ o	Resistor (1kΩ) (if using hardware)
  TF1=0;
 }}
 ```
-
-
 ## Output:
-
 <img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/abfdbe1d-97ab-499a-9d0d-529283083273" />
-
 <img width="1380" height="881" alt="image" src="https://github.com/user-attachments/assets/8742ae00-f546-4be1-9718-5ab89c4d660a" />
 
 ## Result:
