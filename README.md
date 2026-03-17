@@ -15,6 +15,9 @@ o	Oscilloscope (to observe the waveform)
 o	Resistor (1kΩ) (if using hardware)
 3.	Connect P1.0 of the microcontroller to the oscilloscope's input.
 4.	Save the design and proceed to programming in Keil.
+ 
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/0193f568-7d70-4310-9a37-989204f63d46" />
+
 
 ## Algorithm:
 1.	Configure P1.0 as an output port.
@@ -32,8 +35,41 @@ o	Resistor (1kΩ) (if using hardware)
 
 
 ## Program:
+```
+#include<reg51.h>
+ sbit wave=P1^0;
+ void delay();
+ void main()
+ {
+ wave=0;
+ while(1)
+ {
+ wave=1;
+ delay();
+ wave=0;
+ delay();
+ }
+ }
+ void delay()
+ {
+ unsigned char i;
+ TMOD=0X10;
+ for(i=0;i<14;i++)
+ {
+ TH1=0X00;
+ TL1=0X00;
+ TR1=1;
+ while(TF1==0);
+ TF1=0;
+}}
+```
+
 
 ## Output:
+
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/abfdbe1d-97ab-499a-9d0d-529283083273" />
+
+<img width="1380" height="881" alt="image" src="https://github.com/user-attachments/assets/8742ae00-f546-4be1-9718-5ab89c4d660a" />
 
 ## Result:
 The square wave generation using the 8051 microcontroller has been successfully implemented and simulated using Keil and Proteus.
